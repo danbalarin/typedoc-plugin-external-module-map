@@ -63,9 +63,9 @@ export class ExternalModuleMapPlugin extends ConverterComponent {
 
     */
     if (null != match) {
-      console.log(' Mapping ', fileName, ' ==> ', match[1]);
+      console.log(' Mapping ', fileName, ' ==> ', match[1].replace('/', '-'));
       this.moduleRenames.push({
-        renameTo: match[1],
+        renameTo: match[1].replace('/', '-'),
         reflection: <ContainerReflection>reflection
       });
     }
